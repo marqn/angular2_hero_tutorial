@@ -5,16 +5,27 @@ export class Hero {
     name:string;
 }
 
+const HEROES:Hero[] = [
+    {id: 1, name: 'marqn'},
+    {id: 2, name: 'Narco'},
+    {id: 3, name: 'Pokemon'},
+    {id: 4, name: 'Lucy'},
+    {id: 5, name: 'Henry'},
+    {id: 6, name: 'Fester'},
+    {id: 7, name: 'July'}
+];
+
 @Component({
     selector: 'my-app',
-    template: '<h1>{{title}}</h1>' +
-    '<h2>{{hero.name}} details:</h2>' +
-    '<div><label>id: {{hero.id}}</label></div>' +
-    '<div><label>name: {{hero.name}}</label>' +
-    '<input [(ngModel)]="hero.name" placeholder="name">' +
-    '</div>'
+    template: '<h2>My Heroes</h2>' +
+    '<ul class="heroes">' +
+    '<li *ngFor="let hero of heroes">' +
+    '<span class="badge">{{hero.id}}</span> {{hero.name}}' +
+    '</li>' +
+    '</ul>'
 })
 export class AppComponent {
+    public heroes = HEROES;
     title = 'Tour of Heroes';
     hero:Hero = {
         id: 1,

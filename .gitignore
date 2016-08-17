@@ -1,5 +1,7 @@
+/angular2_quickstart.iml
+/angular2-tour-of-heroes.iml
 archive
 node_modules
 .idea
 /npm-debug.log
-angular2-quickstart.iml
+.iml
